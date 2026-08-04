@@ -1,5 +1,6 @@
 const { app, BrowserWindow, globalShortcut, ipcMain, screen } = require('electron');
 const path = require('path');
+const url = require('url');
 const isDev = require('electron-is-dev');
 const { takeScreenshot } = require('./services/capture');
 const { analyzeImage, checkAgyInstallation } = require('./services/ai');
@@ -37,7 +38,7 @@ function createWindow() {
 
   const startUrl = isDev
     ? 'http://localhost:5173'
-    : `file://${path.join(__dirname, 'dist/index.html')}`;
+    : url.pathToFileURL(path.join(__dirname, 'dist/index.html')).href;
 
   mainWindow.loadURL(startUrl);
 

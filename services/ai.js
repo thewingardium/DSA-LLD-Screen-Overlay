@@ -16,10 +16,7 @@ function analyzeImage(imagePaths) {
     const paths = Array.isArray(imagePaths) ? imagePaths : [imagePaths];
     const pathsStr = paths.join(', ');
 
-    const prompt = `Please act as an expert DSA and LLD companion. Analyze the problem statement shown spanning across the screenshots at ${pathsStr}. 
-Provide a complete conceptual explanation of the solution using an easy-to-understand real-world analogy. DO NOT just provide minor hints.
-If the problem is related to Low-Level Design (LLD), you MUST include a Mermaid UML class diagram inside a \\\`\\\`\\\`mermaid code block to visualize the system architecture.
-Format your response clearly using Markdown.`;
+    const prompt = `Please act as an expert DSA and LLD companion. Analyze the problem statement shown spanning across the screenshots at ${pathsStr}. Provide a complete conceptual explanation of the solution using an easy-to-understand real-world analogy. DO NOT just provide minor hints. If the problem is related to Low-Level Design (LLD), you MUST include a Mermaid UML class diagram inside a \\\`\\\`\\\`mermaid code block to visualize the system architecture. Format your response clearly using Markdown.`;
     
     // Cross-platform command execution
     const cmd = process.platform === 'win32' 
