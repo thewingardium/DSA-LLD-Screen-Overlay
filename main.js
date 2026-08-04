@@ -100,7 +100,7 @@ app.whenReady().then(() => {
   createWindow();
 
   // Toggle Visibility
-  globalShortcut.register('Control+Option+O', () => {
+  globalShortcut.register('Control+Alt+O', () => {
     if (mainWindow) {
       if (mainWindow.isVisible()) {
         mainWindow.hide();
@@ -119,12 +119,12 @@ app.whenReady().then(() => {
   });
 
   // Trigger Analysis
-  globalShortcut.register('Control+Option+A', () => {
+  globalShortcut.register('Control+Alt+A', () => {
     triggerAnalysis(false);
   });
 
   // Queue Screenshot
-  globalShortcut.register('Control+Option+C', async () => {
+  globalShortcut.register('Control+Alt+C', async () => {
     if (!mainWindow) return;
     mainWindow.hide();
     await new Promise(r => setTimeout(r, 100));
@@ -141,12 +141,12 @@ app.whenReady().then(() => {
   });
 
   // Retry Analysis
-  globalShortcut.register('Control+Option+R', () => {
+  globalShortcut.register('Control+Alt+R', () => {
     triggerAnalysis(true);
   });
 
   // Toggle Scroll Mode
-  globalShortcut.register('Control+Option+S', () => {
+  globalShortcut.register('Control+Alt+S', () => {
     if (!mainWindow) return;
     if (mainWindow.isVisible()) {
       isScrollMode = !isScrollMode;
