@@ -9,8 +9,8 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "electron-dev": "concurrently \"vite\" \"wait-on tcp:5173 && cross-env NODE_ENV=development electron .\"",
-    "dist:mac": "vite build && electron-builder --mac",
-    "dist:win": "vite build && electron-builder --win"
+    "dist:mac": "vite build && electron-builder --mac --arm64",
+    "dist:win": "vite build && electron-builder --win --x64"
   },
   "dependencies": {
     "electron-is-dev": "^3.0.1",
