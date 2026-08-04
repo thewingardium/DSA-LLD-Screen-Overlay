@@ -2,6 +2,8 @@
   "name": "dsa-overlay-app",
   "private": true,
   "version": "1.0.4",
+  "author": "thewingardium",
+  "description": "An always-on background DSA and LLD companion overlay",
   "main": "main.js",
   "scripts": {
     "dev": "vite",
