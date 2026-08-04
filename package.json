@@ -1,0 +1,59 @@
+{
+  "name": "dsa-overlay-app",
+  "private": true,
+  "version": "0.0.0",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "electron-dev": "concurrently \"vite\" \"wait-on tcp:5173 && cross-env NODE_ENV=development electron .\"",
+    "dist:mac": "vite build && electron-builder --mac",
+    "dist:win": "vite build && electron-builder --win"
+  },
+  "dependencies": {
+    "katex": "^0.18.1",
+    "mermaid": "^11.16.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-markdown": "^10.1.0",
+    "react-zoom-pan-pinch": "^4.0.4",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
+    "screenshot-desktop": "^1.15.4"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "concurrently": "^10.0.4",
+    "cross-env": "^10.1.0",
+    "electron": "^43.2.0",
+    "electron-builder": "^26.15.3",
+    "electron-is-dev": "^3.0.1",
+    "oxlint": "^1.75.0",
+    "vite": "^8.2.0",
+    "wait-on": "^9.1.0"
+  },
+  "build": {
+    "appId": "com.antigravity.dsa-companion",
+    "productName": "DSA Companion",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "main.js",
+      "preload.js",
+      "services/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "target": ["dmg", "dir"]
+    },
+    "win": {
+      "target": "portable"
+    }
+  }
+}
